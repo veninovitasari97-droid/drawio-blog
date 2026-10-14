@@ -1,100 +1,340 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Draw.io Open Source</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background: #f0f4f8;
-            color: #263238;
-        }
-        header {
-            background: #1769aa;
-            color: white;
-            padding: 25px;
-            text-align: center;
-        }
-        nav {
-            background: #123b60;
-            padding: 15px;
-            text-align: center;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 12px;
-        }
-        main {
-            max-width: 850px;
-            margin: 25px auto;
-            padding: 25px;
-            background: white;
-            border-radius: 12px;
-        }
-        h2 {
-            color: #1769aa;
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Draw.io Open Source | Belajar Diagram</title>
+
+<style>
+* {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f3f7fc;
+    color: #243247;
+    line-height: 1.7;
+}
+
+header {
+    background: linear-gradient(135deg, #155eef, #60a5fa);
+    color: white;
+    text-align: center;
+    padding: 55px 20px;
+}
+
+header h1 {
+    font-size: 38px;
+    margin: 0;
+}
+
+header p {
+    font-size: 17px;
+}
+
+nav {
+    background: #102a56;
+    padding: 15px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+nav a {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    margin: 5px 12px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    color: #93c5fd;
+}
+
+.hero {
+    text-align: center;
+    padding: 45px 20px;
+    background: white;
+}
+
+.hero h2 {
+    color: #155eef;
+    font-size: 29px;
+}
+
+.container {
+    width: 90%;
+    max-width: 1050px;
+    margin: auto;
+}
+
+section {
+    padding: 35px 0;
+    scroll-margin-top: 65px;
+}
+
+h2.section-title {
+    color: #155eef;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: white;
+    padding: 23px;
+    border-radius: 14px;
+    box-shadow: 0 4px 15px #17255412;
+    border: 1px solid #e3eaf5;
+}
+
+.card h3 {
+    color: #155eef;
+    margin-top: 0;
+}
+
+.number {
+    font-size: 30px;
+}
+
+.button {
+    display: inline-block;
+    background: #155eef;
+    color: white;
+    text-decoration: none;
+    padding: 12px 22px;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.button:hover {
+    background: #1047b8;
+}
+
+.callout {
+    background: #e2edff;
+    padding: 24px;
+    border-radius: 12px;
+    border-left: 5px solid #155eef;
+}
+
+footer {
+    background: #102a56;
+    color: white;
+    text-align: center;
+    padding: 28px 15px;
+    margin-top: 25px;
+}
+
+footer a {
+    color: #bfdbfe;
+}
+
+@media (max-width: 600px) {
+    header h1 {
+        font-size: 29px;
+    }
+
+    nav a {
+        margin: 4px 7px;
+        font-size: 14px;
+    }
+
+    .container {
+        width: 92%;
+    }
+
+    .hero h2 {
+        font-size: 24px;
+    }
+}
+</style>
 </head>
+
 <body>
-    <header>
-        <h1>Draw.io Open Source</h1>
-        <p>Belajar Membuat Diagram dengan Mudah</p>
-    </header>
 
-    <nav>
-        <a href="#beranda">Beranda</a>
-        <a href="#tentang">Tentang</a>
-        <a href="#fitur">Fitur</a>
-        <a href="#tutorial">Tutorial</a>
-    </nav>
+<header id="beranda">
+    <h1>Draw.io Open Source</h1>
+    <p>Belajar Membuat Diagram dengan Mudah</p>
+    <p>Kenali fitur, manfaat, dan tutorial diagrams.net.</p>
+</header>
 
-    <main id="beranda">
-        <h2>Selamat Datang!</h2>
+<nav>
+    <a href="#beranda">Beranda</a>
+    <a href="#tentang">Tentang</a>
+    <a href="#fitur">Fitur</a>
+    <a href="#tutorial">Tutorial</a>
+    <a href="#manfaat">Manfaat</a>
+    <a href="#kelompok">Kelompok</a>
+</nav>
+
+<div class="hero">
+    <h2>Selamat Datang di Blog Draw.io!</h2>
+    <p>
+        Temukan panduan membuat flowchart, ERD, DFD,
+        dan diagram sistem informasi untuk pemula.
+    </p>
+    <a class="button" href="#tutorial">Mulai Belajar</a>
+</div>
+
+<main class="container">
+
+<section id="tentang">
+    <h2 class="section-title">Apa Itu Draw.io?</h2>
+    <div class="card">
         <p>
-            Blog ini membahas Draw.io, software open source
-            untuk membuat diagram secara mudah dan praktis.
+            Draw.io, yang dikenal sebagai diagrams.net,
+            adalah aplikasi untuk membuat berbagai jenis
+            diagram. Aplikasi ini dapat digunakan melalui
+            browser dan juga tersedia sebagai aplikasi desktop.
         </p>
+        <p>
+            Draw.io membantu pengguna menyusun ide dan
+            menggambarkan alur suatu proses secara visual.
+            Aplikasi ini berguna bagi mahasiswa, programmer,
+            analis sistem, dan pekerja profesional.
+        </p>
+        <a class="button" href="https://app.diagrams.net/"
+           target="_blank" rel="noopener">
+            Buka Draw.io
+        </a>
+    </div>
+</section>
 
-        <section id="tentang">
-            <h2>Apa Itu Draw.io?</h2>
+<section id="fitur">
+    <h2 class="section-title">Fitur Utama</h2>
+    <div class="cards">
+        <div class="card">
+            <div class="number">📊</div>
+            <h3>Flowchart</h3>
+            <p>Menggambarkan langkah-langkah proses atau algoritma.</p>
+        </div>
+        <div class="card">
+            <div class="number">🗃️</div>
+            <h3>ERD</h3>
+            <p>Menggambarkan hubungan antarentitas dalam basis data.</p>
+        </div>
+        <div class="card">
+            <div class="number">🔄</div>
+            <h3>DFD</h3>
+            <p>Menjelaskan aliran data dalam suatu sistem informasi.</p>
+        </div>
+        <div class="card">
+            <div class="number">🧩</div>
+            <h3>Diagram Sistem</h3>
+            <p>Membantu menyusun rancangan dan dokumentasi sistem.</p>
+        </div>
+    </div>
+</section>
+
+<section id="tutorial">
+    <h2 class="section-title">Tutorial untuk Pemula</h2>
+    <div class="cards">
+        <div class="card">
+            <h3>01. Membuka Aplikasi</h3>
             <p>
-                Draw.io atau diagrams.net adalah aplikasi
-                untuk membuat flowchart, ERD, DFD, dan diagram
-                sistem informasi.
+                Buka situs diagrams.net, kemudian pilih lokasi
+                penyimpanan diagram sesuai kebutuhan.
             </p>
-        </section>
-
-        <section id="fitur">
-            <h2>Fitur Draw.io</h2>
-            <ul>
-                <li>Membuat flowchart</li>
-                <li>Membuat diagram ERD dan DFD</li>
-                <li>Menyusun diagram sistem informasi</li>
-                <li>Menyimpan dan mengekspor diagram</li>
-            </ul>
-        </section>
-
-        <section id="tutorial">
-            <h2>Tutorial</h2>
+        </div>
+        <div class="card">
+            <h3>02. Memilih Bentuk</h3>
             <p>
-                Kunjungi
-                <a href="https://app.diagrams.net/"
-                   target="_blank">Draw.io</a>
-                untuk mulai membuat diagram.
+                Gunakan panel bentuk di sebelah kiri untuk
+                memilih simbol diagram yang diperlukan.
             </p>
-        </section>
-    </main>
+        </div>
+        <div class="card">
+            <h3>03. Menyusun Diagram</h3>
+            <p>
+                Tarik bentuk ke area kerja, tambahkan teks,
+                lalu hubungkan bentuk sesuai alur.
+            </p>
+        </div>
+        <div class="card">
+            <h3>04. Menyimpan Hasil</h3>
+            <p>
+                Simpan diagram dan ekspor ke format yang
+                tersedia, seperti PNG, PDF, atau SVG.
+            </p>
+        </div>
+    </div>
+</section>
 
-    <footer>
-        <p>Blog Edukasi Draw.io Open Source</p>
-    </footer>
+<section id="manfaat">
+    <h2 class="section-title">Manfaat Draw.io</h2>
+    <div class="callout">
+        <ul>
+            <li>Membantu memahami alur proses secara visual.</li>
+            <li>Mendukung tugas kuliah dan perancangan sistem informasi.</li>
+            <li>Memudahkan dokumentasi proses bisnis.</li>
+            <li>Membantu komunikasi ide dalam kerja kelompok.</li>
+            <li>Dapat digunakan untuk berbagai kebutuhan diagram.</li>
+        </ul>
+    </div>
+</section>
+
+<section id="kelompok">
+    <h2 class="section-title">Tentang Blog Kami</h2>
+    <div class="card">
+        <p>
+            Blog ini dibuat sebagai media edukasi untuk
+            memperkenalkan software open source Draw.io
+            dan berbagi tutorial dasar pembuatan diagram.
+        </p>
+        <h3>Identitas Kelompok</h3>
+        <p>Nama kelompok: isi nama kelompok kamu.</p>
+        <p>Mata kuliah: isi nama mata kuliah.</p>
+        <p>Program Studi: Sistem Informasi.</p>
+        <p>Anggota kelompok:</p>
+        <ol>
+            <li>Nama anggota 1</li>
+            <li>Nama anggota 2</li>
+            <li>Nama anggota 3</li>
+            <li>Nama anggota 4</li>
+            <li>Nama anggota 5</li>
+            <li>Nama anggota 6</li>
+            <li>Nama anggota 7</li>
+        </ol>
+        <p>
+            Ganti nama contoh di atas dengan identitas
+            kelompok yang sebenarnya.
+        </p>
+    </div>
+</section>
+
+<section>
+    <div class="callout">
+        <h2>Yuk, Mulai Membuat Diagram!</h2>
+        <p>
+            Praktikkan langsung pengetahuanmu dengan
+            membuat diagram sederhana di diagrams.net.
+        </p>
+        <a class="button" href="https://app.diagrams.net/"
+           target="_blank" rel="noopener">
+            Coba Sekarang
+        </a>
+    </div>
+</section>
+
+</main>
+
+<footer>
+    <p><strong>Draw.io Open Source</strong></p>
+    <p>Blog edukasi software dan diagram sistem informasi.</p>
+    <p>© 2026 Draw.io Blog</p>
+    <a href="#beranda">Kembali ke atas ↑</a>
+</footer>
+
 </body>
 </html>
